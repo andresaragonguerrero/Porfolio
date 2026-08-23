@@ -332,8 +332,34 @@
 }
 
 @media only screen and (max-width: 800px) {
+
+    .projects__carousel-controls,
+    .projects__item:nth-child(even) .projects__carousel-controls {
+        right: var(--space-xs);
+        left: auto;
+    }
+
     .projects__carousel-button {
         height: 2.5rem;
         width: 2.5rem;
+    }
+
+    .projects__description-container,
+    .projects__item:nth-child(even) .projects__description-container,
+    .projects__item:nth-child(2) .projects__description-container,
+    .projects__item:nth-child(3) .projects__description-container,
+    .projects__item:nth-child(4) .projects__description-container {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: var(--space-sm);
+        padding-right: var(--space-xs);
+        border: none;
+        text-align: left;
+    }
+
+    .projects__tools-wrapper {
+        gap: var(--space-xs);
     }
 }
