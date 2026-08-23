@@ -21,6 +21,4 @@ Puedes ver el portfolio aquí:
 
 - *Diseño responsive (móvil, tablet, desktop)*
 - *Animaciones suaves*
-- *Modo oscuro / claro*
-- *Disponible en varios idiomas*
 - *Optimización de rendimiento*
