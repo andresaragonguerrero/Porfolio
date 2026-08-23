@@ -4,7 +4,7 @@ Este es mi porfolio web donde muestro mis proyectos y mi currículo.
 
 ## Descripción
 
-Este proyecto es una segunda versión de mi portfolio personal. Ha sido rediseñado para clarificar la información, mejorar la estética y la organización de mis proyectos, currículo, firma y recomendación.
+Este proyecto es una tercera versión de mi portfolio personal. Ha sido rediseñado para clarificar la información, mejorar la estética y la organización de mis proyectos, currículo, firma y recomendación.
 
 ## Visita mi sitio web
 

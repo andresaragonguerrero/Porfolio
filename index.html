@@ -41,7 +41,7 @@
 
     <title>AJ Aragón - Desarrollador Fullstack</title>
 
-    <link rel="canonical" href="andresaragon.codecrew.info">
+    <link rel="canonical" href="andresaragon.es">
 
     <style>
         @view-transition {
@@ -51,51 +51,43 @@
 </head>
 
 <body>
+
+    <canvas class="background-canvas" id="background-canvas" aria-hidden="true"></canvas>
+
     <div class="content-wrapper">
-        <div class="corners">
-            <video class="video-bg" loading="lazy" fetchpriority="low" decoding="async" autoplay muted loop playsinline
-                preload="metadata" id="video-bg">
-                <source src="/assets/video-bg-Shirlyn_Mun_Lyn_Tan.mp4" type="video/mp4">
-                <track label="Español" kind="captions" srclang="es" src="resources/myvideo-es.vtt">
-            </video>
+        <section class="section section-author">
+            <h1 class="title">
+                <span class="first-name">Andrés</span>
+                <span class="last-name">Aragón</span>
+            </h1>
 
-            <section class="section section-author">
-                <h1 class="title">A. J. Aragón</h1>
+            <div class="rol-description-container">
+                <h2 class="subtitle-role">Desarrollador Fullstack</h2>
+                <p class="description">
+                    Desarrollo aplicaciones web buscando soluciones eficientes y mantenibles,
+                    aplicando principios SOLID, patrones de diseño y buenas prácticas.
+                </p>
+            </div>
+        </section>
 
-                <div class="rol-description-container">
-                    <h2 class="subtitle-rol">Desarrollador Fullstack</h2>
-                    <p class="description">
-                        Desarrollo aplicaciones web buscando soluciones eficientes y mantenibles,
-                        aplicando principios SOLID, patrones de diseño y buenas prácticas.
-                    </p>
-                </div>
-            </section>
+        <section class="section section-works">
+            <nav class="nav nav-portfolio" aria-label="nav-portfolio">
+                <a class="nav-link" href="/porfolio.html">Ver porfolio</a>
+            </nav>
 
-            <section class="section section-works">
-                <nav class="nav nav-portfolio" aria-label="nav-portfolio">
-                    <a class="nav-link" href="/porfolio.html">Ver porfolio</a>
-                </nav>
+            <nav class="nav nav-social-media" aria-label="nav-social-media">
+                <a class="nav-link" href="https://www.linkedin.com/in/ajaragon/" target="_blank">LinkedIn</a>
+                <a class="nav-link" href="https://github.com/andresaragonguerrero" target="_blank">GitHub</a>
+            </nav>
 
-                <nav class="nav nav-social-media" aria-label="nav-social-media">
-                    <a class="nav-link" href="https://www.linkedin.com/in/ajaragon/" target="_blank">LinkedIn</a>
-                    <a class="nav-link" href="https://github.com/andresaragonguerrero" target="_blank">GitHub</a>
-                </nav>
-
-                <nav class="nav nav-resources" aria-label="nav-resources">
-                    <a class="nav-link" href="/curriculo.html">Currículo</a>
-                    <a class="nav-link" href="/firma.html">Firma</a>
-                    <a class="nav-link" href="/assets/carta-recomendación.pdf">Carta de recomendación</a>
-                    <!-- <a class="nav-link" href="/statement.html">Statement profesional</a> -->
-                    <a class="nav-link" href="https://pixabay.com/users/lyn890709-22764594/" class="video-credit-link">
-                        Video by <em>Shirlyn Mun Lyn Tan</em>
-                    </a>
-                </nav>
-            </section>
-
-            <em class="video-author">Vídeo creado por: <strong>Shirlyn Mun Lyn Tan</strong></em>
-        </div>
+            <nav class="nav nav-resources" aria-label="nav-resources">
+                <a class="nav-link" href="/curriculo-impreso.html" target="_blank">Currículo</a>
+                <a class="nav-link" href="/assets/carta-recomendación.pdf" target="_blank">Carta de recomendación</a>
+            </nav>
+        </section>
     </div>
     <script src="/js/main.js" fetchpriority="low" defer></script>
+    <script src="/js/background.js" fetchpriority="low" defer></script>
 </body>
 
 </html>

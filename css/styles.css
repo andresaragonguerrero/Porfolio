@@ -1,73 +1,133 @@
 :root {
+    --grid-columns: 20;
+    --col-width: calc(100vw / var(--grid-columns));
+    --header-columns: 1;
+    --header-cols: var(--header-columns);
+    --content-cols: calc(var(--grid-columns) - var(--header-columns));
+    --content-grid: repeat(var(--content-cols), 1fr);
 
-    /* colores */
-    --color-text: #010a09;
-    --color-background: #f6fefd;
-    --color-background-alpha: rgba(246, 254, 253, 70%);
-    --color-primary: #24e2cb;
-    --color-secondary: #81bbee;
-    --color-tertiary: #80142b;
-    --color-accent: #557be8;
+    --hero-shrink-distance: 80dvh;
+    --hero-ascend-distance: 100dvh;
+    --hero-final-scale: 0.5;
 
-    --color-border: rgba(1, 10, 9, 0.12);
+    --header-height-mobile: 3rem;
 
-    --color-shadow-sm: 0 1px 3px rgba(1, 10, 9, 0.08);
-    --color-shadow-md: 0 2px 8px rgba(1, 10, 9, 0.12);
-    --color-shadow-lg: 0 8px 16px rgba(1, 10, 9, 0.16);
+    --ff-primary: "Stack Sans Notch", sans-serif;
+    --ff-secondary: "Stack Sans Text", sans-serif;
 
-    /* fuentes */
-    --font-primary: "Stack Sans Notch", sans-serif;
-    --font-secondary: "Stack Sans Text", sans-serif;
-}
+    --fs-display: clamp(2.25rem, 2rem + 3cqw, 4.5rem);
+    --fs-title: clamp(1.4rem, 1.25rem + 1.5cqw, 2.5rem);
+    --fs-title-sm: clamp(1rem, 0.82rem + 1.3cqw, 1.75rem);
+    --fs-body: clamp(0.95rem, 0.9rem + 0.25cqw, 1.125rem);
+    --fs-caption: clamp(0.75rem, 0.72rem + 0.15cqw, 0.875rem);
 
-:root.dark {
-    --color-text: #f6fefd;
-    --color-background: #121f1e;
-    --color-background-alpha: rgba(1, 9, 8, 70%);
-    --color-primary: #1dddc7;
-    --color-secondary: #114b7e;
-    --color-tertiary: #80142b;
+    --color-bg: hsl(210, 15%, 97%);
+    --color-text: hsl(215, 25%, 10%);
+    --color-border: hsla(215, 25%, 10%, 0.12);
+    --color-accent: hsl(215, 30%, 22%);
+    --blob-vivid-1: hsla(210, 15%, 75%, 0.30);
+    --blob-vivid-2: hsla(215, 20%, 55%, 0.25);
+    --blob-vivid-3: hsla(205, 10%, 85%, 0.35);
 
-    --color-accent: #173fab;
-
-    --color-border: rgba(246, 254, 253, 0.15);
-
-    --color-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-    --color-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.5);
-    --color-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.6);
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
 
-    transition: color .4s ease-out, background-color .5s ease-out;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+
 }
+
 
 body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: calc(var(--col-width) * var(--header-columns)) 1fr;
+    background-color: var(--color-bg);
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.main {
     position: relative;
-
-    background-color: var(--color-background);
-
-    scroll-behavior: smooth;
+    min-width: 0;
 }
 
-.article {
-    scroll-margin-top: 5rem;
+.u-fade-blur {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(20px);
+    transition:
+        opacity 1.5s cubic-bezier(0.23, 1, 0.32, 1) .25s,
+        filter 1.5s cubic-bezier(0.23, 1, 0.32, 1) .25s,
+        transform 1.5s cubic-bezier(0.23, 1, 0.32, 1) .25s;
+    will-change: opacity, filter, transform;
 }
 
-li {
-    list-style: none;
+.projects__item.is-active .u-fade-blur,
+.u-fade-blur.is-visible {
+    opacity: 1 !important;
+    filter: blur(0) !important;
+    transform: translateY(0) !important;
 }
 
-.link {
-    color: var(--color-text);
-    text-decoration: none;
+.u-hover-slide-fill {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color-accent);
+    border: none;
+    cursor: pointer;
+    transition:
+        color 1s cubic-bezier(0.23, 1, 0.32, 1),
+        background-color 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.u-hover-slide-fill:hover {
+    background-color: var(--color-accent);
+}
+
+.u-hover-slide-fill:hover * {
+    color: var(--color-bg);
 }
 
 /* Animaciones de las transiciones entre páginas*/
@@ -75,45 +135,56 @@ li {
     navigation: auto;
 }
 
-::view-transition {
-    background-color: var(--color-text);
-}
-
 ::view-transition-old(root) {
-    animation: 1s cubic-bezier(0.4, 0, 0.2, 1) both shrink-behind;
-    transform-origin: center;
-    z-index: 1;
+    animation: .6s cubic-bezier(0.23, 1, 0.32, 1) both page-exit;
 }
 
 ::view-transition-new(root) {
-    animation: 1s cubic-bezier(0.4, 0, 0.2, 1) both grow-over;
-    transform-origin: right center;
-    z-index: 2;
+    animation: .9s cubic-bezier(0.23, 1, 0.32, 1) .15s both page-enter;
 }
 
-@keyframes shrink-behind {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-
+@keyframes page-exit {
     to {
-        transform: scale(0.9);
-        opacity: 0.9;
+        opacity: 0;
+        filter: blur(6px);
+        transform: translateY(-24px) scale(0.98);
     }
 }
 
-@keyframes grow-over {
+@keyframes page-enter {
     from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(28px) scale(1.01);
     }
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-    mix-blend-mode: normal;
+@media only screen and (max-width: 1400px) {
+    :root {
+        --header-columns: 0;
+    }
+
+    body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    :root {
+        --fs-display: clamp(1.75rem, 1.5rem + 2cqw, 3rem);
+        --fs-title: clamp(1.1rem, 1rem + 1cqw, 1.75rem);
+        --fs-title-sm: clamp(0.85rem, 0.78rem + 0.8cqw, 1.25rem);
+        --fs-body: clamp(0.85rem, 0.8rem + 0.2cqw, 1rem);
+        --fs-caption: clamp(0.65rem, 0.62rem + 0.12cqw, 0.75rem);
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    :root {
+        --fs-display: clamp(1.5rem, 1.3rem + 3cqw, 2.25rem);
+        --fs-title: clamp(1rem, 0.9rem + 1.5cqw, 1.4rem);
+        --fs-title-sm: clamp(0.8rem, 0.72rem + 1cqw, 1rem);
+        --fs-body: clamp(0.8rem, 0.75rem + 0.15cqw, 0.95rem);
+        --fs-caption: clamp(0.6rem, 0.58rem + 0.1cqw, 0.7rem);
+    }
 }

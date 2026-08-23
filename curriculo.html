@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="/css/curriculo/curriculo-impreso.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/curriculo.css">
-    <link rel="stylesheet" href="/css/curriculo-impresion.css">
 
     <!-- fonts -->
     <!-- títulos: font-family: "Stack Sans Notch", sans-serif; -->
@@ -24,491 +23,398 @@
 </head>
 
 <body class="body">
-    <button id="print-button" onclick="window.print()">
-        <svg class="svg-icon" height="24px" width="24px" fill="#f6fefd" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24">
-            <path
-                d="m14,7.015V.474c.913.346,1.753.879,2.465,1.59l3.484,3.486c.712.711,1.245,1.551,1.591,2.464h-6.54c-.552,0-1-.449-1-1Zm7.976,3h-6.976c-1.654,0-3-1.346-3-3V.038c-.161-.011-.322-.024-.485-.024h-4.515C4.243.015,2,2.258,2,5.015v14c0,2.757,2.243,5,5,5h10c2.757,0,5-2.243,5-5v-8.515c0-.163-.013-.324-.024-.485Zm-6.269,8.506l-1.613,1.614c-.577.577-1.336.866-2.094.866s-1.517-.289-2.094-.866l-1.613-1.614c-.391-.391-.391-1.024,0-1.414.391-.391,1.023-.391,1.414,0l1.293,1.293v-4.398c0-.552.447-1,1-1s1,.448,1,1v4.398l1.293-1.293c.391-.391,1.023-.391,1.414,0,.391.39.391,1.023,0,1.414Z" />
-        </svg>
-        <span class="span-text">Descargar CV</span>
-    </button>
 
-    <div class="cv-layout">
-        <img class="author-image" loading="lazy" decoding="async" alt="autor" src="assets/profile.jpg">
-        <section class="cv-header">
-            <article class="header-author-info">
-                <h1 class="header-title">Andrés Aragón</h1>
-                <h2 class="header-role">Desarrollador Fullstack</h2>
-            </article>
-            <ul class="header-contact-list">
+    <div class="layout-cv">
 
-                <li class="contact-item">
-                    <h3 class="item-title">Porfolio: </h3>
-                    <div class="item-link">
-                        <a class="link" href="https://andresaragon.es">
-                            <svg class="image-svg" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"
-                                viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2" />
-                            </svg>
-                            <span class="link-span">andresaragon.es</span>
-                        </a>
-                    </div>
-                </li>
-
-                <li class="contact-item">
-                    <h3 class="item-title">ProtonMail: </h3>
-                    <div class="item-link">
-                        <a class="link" href="mailto:ajaragon@proton.me">
-                            <svg class="image-svg proton-icon" fill="#010a09" width="25px" height="25px"
-                                viewBox="0 0 32 32" version="1.1" xml:space="preserve"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <style type="text/css">
-                                    .st0 {
-                                        fill-rule: evenodd;
-                                        clip-rule: evenodd;
-                                        fill: #f6fefd;
-                                    }
-                                </style>
-                                <path class="st0"
-                                    d="M4,6.8v5.2l7.2,6.1l3.7-3.1c-0.1,0-0.1-0.1-0.2-0.1L4.8,6.4C4.5,6.1,4,6.3,4,6.8z M9.9,19.6l-5.9-5v10.1  c0,1.1,0.9,2,2,2h15V12.4l-8.5,7.2C11.7,20.2,10.7,20.2,9.9,19.6z M23,10.3V9.9l4.2-3.5c0.3-0.3,0.8,0,0.8,0.4v17.9c0,1.1-0.9,2-2,2  h-3V10.5C23,10.5,23,10.4,23,10.3z" />
-                            </svg>
-                            <span class="link-span">ajaragon@proton.me</span>
-                        </a>
-                    </div>
-                </li>
-
-                <li class="contact-item">
-                    <h3 class="item-title">LinkedIn: </h3>
-                    <div class="item-link">
-                        <a class="link" href="https://www.linkedin.com/in/ajaragon/">
-                            <svg class="image-svg" height="25px" width="25px" version="1.1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 382 382" xml:space="preserve" fill="currentColor">
-                                <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889
-                        C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056
-                        H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806
-                        c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1
-                        s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73
-                        c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079
-                        c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426
-                        c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472
-                        L341.91,330.654L341.91,330.654z" />
-                            </svg>
-                            <span class="link-span">www.linkedin.com/in/ajaragon</span>
-                        </a>
-                    </div>
-                </li>
-
-                <li class="contact-item">
-                    <h3 class="item-title">Número de móvil: </h3>
-                    <div class="item-link">
-                        <a class="link" href="#">
-                            <!-- <svg class="image-svg" fill="currentColor" width="25px" height="25px" viewBox="0 -0.5 25 25"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="m12.301 0h.093c2.242 0 4.34.613 6.137 1.68l-.055-.031c1.871 1.094 3.386 2.609 4.449 4.422l.031.058c1.04 1.769 1.654 3.896 1.654 6.166 0 5.406-3.483 10-8.327 11.658l-.087.026c-.063.02-.135.031-.209.031-.162 0-.312-.054-.433-.144l.002.001c-.128-.115-.208-.281-.208-.466 0-.005 0-.01 0-.014v.001q0-.048.008-1.226t.008-2.154c.007-.075.011-.161.011-.249 0-.792-.323-1.508-.844-2.025.618-.061 1.176-.163 1.718-.305l-.076.017c.573-.16 1.073-.373 1.537-.642l-.031.017c.508-.28.938-.636 1.292-1.058l.006-.007c.372-.476.663-1.036.84-1.645l.009-.035c.209-.683.329-1.468.329-2.281 0-.045 0-.091-.001-.136v.007c0-.022.001-.047.001-.072 0-1.248-.482-2.383-1.269-3.23l.003.003c.168-.44.265-.948.265-1.479 0-.649-.145-1.263-.404-1.814l.011.026c-.115-.022-.246-.035-.381-.035-.334 0-.649.078-.929.216l.012-.005c-.568.21-1.054.448-1.512.726l.038-.022-.609.384c-.922-.264-1.981-.416-3.075-.416s-2.153.152-3.157.436l.081-.02q-.256-.176-.681-.433c-.373-.214-.814-.421-1.272-.595l-.066-.022c-.293-.154-.64-.244-1.009-.244-.124 0-.246.01-.364.03l.013-.002c-.248.524-.393 1.139-.393 1.788 0 .531.097 1.04.275 1.509l-.01-.029c-.785.844-1.266 1.979-1.266 3.227 0 .025 0 .051.001.076v-.004c-.001.039-.001.084-.001.13 0 .809.12 1.591.344 2.327l-.015-.057c.189.643.476 1.202.85 1.693l-.009-.013c.354.435.782.793 1.267 1.062l.022.011c.432.252.933.465 1.46.614l.046.011c.466.125 1.024.227 1.595.284l.046.004c-.431.428-.718 1-.784 1.638l-.001.012c-.207.101-.448.183-.699.236l-.021.004c-.256.051-.549.08-.85.08-.022 0-.044 0-.066 0h.003c-.394-.008-.756-.136-1.055-.348l.006.004c-.371-.259-.671-.595-.881-.986l-.007-.015c-.198-.336-.459-.614-.768-.827l-.009-.006c-.225-.169-.49-.301-.776-.38l-.016-.004-.32-.048c-.023-.002-.05-.003-.077-.003-.14 0-.273.028-.394.077l.007-.003q-.128.072-.08.184c.039.086.087.16.145.225l-.001-.001c.061.072.13.135.205.19l.003.002.112.08c.283.148.516.354.693.603l.004.006c.191.237.359.505.494.792l.01.024.16.368c.135.402.38.738.7.981l.005.004c.3.234.662.402 1.057.478l.016.002c.33.064.714.104 1.106.112h.007c.045.002.097.002.15.002.261 0 .517-.021.767-.062l-.027.004.368-.064q0 .609.008 1.418t.008.873v.014c0 .185-.08.351-.208.466h-.001c-.119.089-.268.143-.431.143-.075 0-.147-.011-.214-.032l.005.001c-4.929-1.689-8.409-6.283-8.409-11.69 0-2.268.612-4.393 1.681-6.219l-.032.058c1.094-1.871 2.609-3.386 4.422-4.449l.058-.031c1.739-1.034 3.835-1.645 6.073-1.645h.098-.005zm-7.64 17.666q.048-.112-.112-.192-.16-.048-.208.032-.048.112.112.192.144.096.208-.032zm.497.545q.112-.08-.032-.256-.16-.144-.256-.048-.112.08.032.256.159.157.256.047zm.48.72q.144-.112 0-.304-.128-.208-.272-.096-.144.08 0 .288t.272.112zm.672.673q.128-.128-.064-.304-.192-.192-.32-.048-.144.128.064.304.192.192.32.044zm.913.4q.048-.176-.208-.256-.24-.064-.304.112t.208.24q.24.097.304-.096zm1.009.08q0-.208-.272-.176-.256 0-.256.176 0 .208.272.176.256.001.256-.175zm.929-.16q-.032-.176-.288-.144-.256.048-.224.24t.288.128.225-.224z" />
-                            </svg> -->
-                            <svg class="image-svg" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24" width="25px" height="25px">
-                                <path
-                                    d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm0-22C6.486,2,2,6.486,2,12s4.486,10,10,10,10-4.486,10-10S17.514,2,12,2ZM6,15.827l1.378,1.378c.539,.54,1.249,.795,1.957,.795,3.634,0,8.666-4.752,8.666-8.666,0-.708-.256-1.418-.795-1.957l-1.378-1.378-2.712,2.712,1.775,1.775c-.882,2.195-2.376,3.629-4.403,4.403l-1.775-1.775-2.712,2.712Z" />
-                            </svg>
-                            <span class="link-span">673-326-226</span>
-                        </a>
-                    </div>
-                </li>
-
-
-            </ul>
-        </section>
-        <div class="cv-body">
-            <section class="cv-main">
-                <article class="article article-about-me">
-                    <div class="article-header">
-                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"
-                            height="24px" fill="currentColor">
-                            <circle cx="12" cy="7" r="4" />
-                            <path d="M5,16v4H19V16a3,3,0,0,0-3-3H8A3,3,0,0,0,5,16Z" />
-                            <path d="M21,24H16V22h5a1,1,0,0,0,1-1V16h2v5A3,3,0,0,1,21,24Z" />
-                            <path d="M2,8H0V3A3,3,0,0,1,3,0H8V2H3A1,1,0,0,0,2,3Z" />
-                            <path d="M8,24H3a3,3,0,0,1-3-3V16H2v5a1,1,0,0,0,1,1H8Z" />
-                            <path d="M24,8H22V3a1,1,0,0,0-1-1H16V0h5a3,3,0,0,1,3,3Z" />
-                        </svg>
-                        <h2 class="article-title">Sobre mí</h2>
-                    </div>
-                    <div class="article-body">
-                        <p class="text">
-                            Soy desarrollador fullstack junior formado con una base sólida en desarrollo web.
-                            Mi prioridad es escribir código claro y mantenible.
-                        </p>
-                        <p class="text">
-                            Programo teniendo en cuenta los principios SOLID y los patrones de diseño.
-                            Aunque sea en proyectos sencillos, me importa que el software sea entendible y escalable.
-                            No busco solamente que algo funcione; sino también comprender por qué funciona de esta
-                            manera y cómo
-                            encaja con el resto del código.
-                        </p>
-                        <p class="text">
-                            Además de que me gusta trabajar en equipo, soy meticuloso y me tomo muy en serio el hacer las cosas bien.
-                        </p>
-                        <p class="text" hidden>¿Te imaginas este perfil funcionando dentro de vuestro equipo?</p>
-                    </div>
-                </article>
-                <article class="article article-experience">
-                    <div class="article-header">
-                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"
-                            height="24px">
-                            <path
-                                d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z" />
-                            <path
-                                d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z" />
-                        </svg>
-                        <h2 class="article-title">Experiencia profesional</h2>
-                    </div>
-                    <div class="article-body">
-                        <div class="job-card">
-                            <div class="card-header">
-                                <h3 class="card-title">Desarrollador fullstack en prácticas (<span
-                                        class="text-span">2025</span>)</h3>
-                                <p class="card-duration">80 horas</p>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-place">Ecomputer</h3>
-                                <h3 class="card-technologies"><span class="text-span">Tecnologías: </span> Laravel,
-                                    Vue.js</span>
-                                </h3>
-                                <h3 class="card-task"><span class="text-span">Tareas: </span>
-                                    Desarrollo y mantenimiento de funcionalidades sobre una aplicación existente,
-                                    consumo de APIs, implementación de filtros de búsqueda.
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="job-card">
-                            <div class="card-header">
-                                <h3 class="card-title">Desarrollador de software en prácticas (<span
-                                        class="text-span">2023</span>)</h3>
-                                <p class="card-duration">400 horas</p>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-place">SEIDOR</h3>
-                                <h3 class="card-technologies"><span class="text-span">Tecnologías: </span> RPG
-                                    AS/400</span>
-                                </h3>
-                                <h3 class="card-task"><span class="text-span">Tareas: </span>
-                                    Desarrollo de funcionalidades de gestión de datos, diseño e implementación de
-                                    interfaces, desarrollo de sistemas de búsqueda y filtrado de información.
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="article article-education">
-                    <div class="article-header">
-                        <svg class="svg-icon" height="24px" width="24px" fill="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="m24 8.48v11.52a1 1 0 0 1 -2 0v-8.248l-7.4 3.536a5 5 0 0 1 -2.577.694 5.272 5.272 0 0 1 -2.7-.739l-7.38-3.513a3.691 3.691 0 0 1 -.084-6.455c.027-.016.056-.031.084-.045l7.457-3.558a5.226 5.226 0 0 1 5.282.045l7.375 3.513a3.767 3.767 0 0 1 1.943 3.25zm-11.978 9.5a7.26 7.26 0 0 1 -3.645-.972l-4.377-2.089v2.7a5.007 5.007 0 0 0 3.519 4.778 15.557 15.557 0 0 0 4.481.603 15.557 15.557 0 0 0 4.481-.607 5.007 5.007 0 0 0 3.519-4.778v-2.691l-4.459 2.13a6.983 6.983 0 0 1 -3.519.928z" />
-                        </svg>
-                        <h2 class="article-title">Educación</h2>
-                    </div>
-                    <div class="article-body">
-                        <div class="course-card">
-                            <div class="card-header">
-                                <p class="card-date">2025 - 2026</p>
-                                <h3 class="card-title">PRO-IN TIC: Desarrollo Front-end</h3>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-place">Fundación Ibercaja</h3>
-                                <h3 class="card-technologies"><span class="text-span">Tecnologías: </span> Angular,
-                                    Principios
-                                    SOLID, patrones de diseño,
-                                    trabajo con Git y metodologías ágiles
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="course-card">
-                            <div class="card-header">
-                                <p class="card-date">2025</p>
-                                <h3 class="card-title">Desarrollo de Aplicaciones Web</h3>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-place">TheHub</h3>
-                                <h3 class="card-technologies"><span class="text-span">Tecnologías: </span> Python,
-                                    React,
-                                    Vue.js,
-                                    Node.js,
-                                    Consumo de APIs REST
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="course-card">
-                            <div class="card-header">
-                                <p class="card-date">2024</p>
-                                <h3 class="card-title">Desarrollo de Aplicaciones Web</h3>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-place">Hiberus</h3>
-                                <h3 class="card-technologies"><span class="text-span">Tecnologías: </span> C#,
-                                    TypeScript,
-                                    .NET,
-                                    Angular,
-                                    Principios SOLID y patrones de diseño,
-                                    Consumo de APIs REST
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="course-card">
-                            <div class="card-header">
-                                <p class="card-date">2021 - 2023</p>
-                                <h3 class="card-title">Desarrollo de Aplicaciones Web</h3>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-place">C.P.I.F.P. "Los Enlaces"</h3>
-                                <h3 class="card-technologies"><span class="text-span">Tecnologías: </span> HTML5,
-                                    CSS3,
-                                    JavaScript, Java, PHP, Laravel, BBDD, SQL, Docker, Consumo de APIs REST
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="article article-languages">
-                    <div class="article-header">
-                        <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px"
-                            height="24px" fill="currentColor">
-                            <path
-                                d="m24 6.5c0 1.381-1.119 2.5-2.5 2.5h-1.394l-1.991 1.254c-.426.267-.961.283-1.401.041-.439-.243-.712-.705-.712-1.207l-.002-4.585c0-1.381 1.119-2.501 2.5-2.501h3c1.381 0 2.5 1.119 2.5 2.499zm-20.106 8.498 1.981 1.248c.428.269.967.282 1.408.039.44-.244.715-.709.715-1.213l.002-4.571c0-1.381-1.119-2.501-2.5-2.501h-3c-1.381 0-2.5 1.119-2.5 2.499v1.999c0 1.381 1.119 2.5 2.5 2.5zm-.77-8.498c.308 0 .611-.142.808-.408 1.353-1.844 3.298-3.141 5.463-3.73-.684.85-1.446 1.917-2.117 3.164-.262.486-.079 1.093.407 1.354.476.26 1.092.084 1.354-.406.988-1.837 2.217-3.273 2.962-4.062.294.311.659.717 1.059 1.214.347.432.978.498 1.405.153.431-.346.499-.975.153-1.406-.007-.009.248.044.383.041.436 0 .837-.288.961-.729.15-.532-.158-1.084-.69-1.234-1.043-.294-2.124-.449-3.215-.449-4.057 0-7.472 1.816-9.739 4.906-.326.445-.23 1.071.215 1.398.179.131.386.194.591.194zm9.876.5h-3c-.553 0-1 .448-1 1s.447 1 1 1h3c.553 0 1-.448 1-1s-.447-1-1-1zm10.951 3.911c.032.358.049.722.049 1.089 0 6.617-5.382 11.999-11.999 12s0 0 0 0c-4.071 0-7.831-2.039-10.057-5.454-.302-.462-.171-1.082.292-1.384.461-.3 1.081-.171 1.384.292 1.369 2.101 3.437 3.571 5.79 4.2-.567-.703-1.188-1.556-1.768-2.541-.28-.477-.122-1.089.354-1.369.474-.28 1.088-.123 1.369.354.916 1.555 1.97 2.783 2.637 3.49.812-.862 2.199-2.507 3.223-4.587h-4.721c-.553 0-1-.447-1-1s.447-1 1-1h5.522c.207-.675.364-1.375.434-2.097.053-.549.538-.953 1.092-.898.55.053.952.542.898 1.092-.064.654-.188 1.287-.347 1.903h3.439c.299-.948.461-1.955.461-3 0-.307-.015-.611-.041-.911-.049-.55.357-1.036.907-1.085.563-.044 1.036.358 1.085.907zm-3.304 6.089h-3.223c-.789 1.881-1.877 3.476-2.818 4.644 2.572-.696 4.733-2.389 6.042-4.644z" />
-                        </svg>
-                        <h2 class="article-title">Idiomas <em class="">(mi lengua materna es el español)</em></h2>
-                    </div>
-
-                    <div class="article-body">
-
-                        <div class="lang-card">
-                            <div class="card-header">
-                                <h3 class="card-title">Inglés</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-span">
-                                    Entiendo sin problemas textos técnicos, de desarrollo y
-                                    textos literarios y conversaciones sobre temas cotidianos y técnicos.
-                                </p>
-                                <p class="text-span">
-                                    Puedo mantener conversaciones con relativa fluidez;
-                                    y escribo textos claros, tanto cotidianos como técnicos.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="lang-card">
-                            <div class="card-header">
-                                <h3 class="card-title">Francés</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-span">
-                                    Entiendo sin problemas textos técnicos, de desarrollo y
-                                    textos literarios; aunque me cuesta algo más comprender las conversaciones.
-                                </p>
-                                <p class="text-span">
-                                    Puedo escribir textos claros tanto cotidianos como técnicos;
-                                    pero me cuesta más mantener conversaciones fluidas.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+        <header class="header">
+            <section class="header__info">
+                <h1 class="header__title-text">
+                    <span>Andrés</span>
+                    <span>Aragón</span>
+                </h1>
+                <h3 class="header__role">
+                    <span>Desarrollador</span>
+                    <span>Fullstack</span>
+                </h3>
             </section>
-            <section class="cv-sidebar">
-                <article class="article article-technologies">
-                    <div class="article-header">
-                        <svg class="svg-icon" fill="currentColor" width="25px" height="25px" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="m24 8v-2c0-2.757-2.243-5-5-5h-14c-2.757 0-5 2.243-5 5v2zm-15.5-5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm-4 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm-4.5 7v8c0 2.757 2.243 5 5 5h14c2.757 0 5-2.243 5-5v-8zm8.026 6.722 2.162 2.054c.4.38.417 1.013.036 1.413-.38.401-1.014.417-1.413.036l-2.181-2.071c-.891-.89-.891-2.308-.019-3.18l2.181-2.181c.391-.391 1.023-.391 1.414 0s.391 1.023 0 1.414l-2.181 2.181c-.092.092-.092.242 0 .334zm9.361 1.414-2.17 2.104c-.396.384-1.029.375-1.414-.021s-.375-1.03.021-1.414l2.159-2.093c.081-.081.081-.231-.011-.323l-2.181-2.181c-.391-.391-.391-1.023 0-1.414s1.023-.391 1.414 0l2.181 2.181c.872.872.872 2.29 0 3.162z" />
-                        </svg>
-                        <h2 class="article-title">Tecnologías</h2>
-                    </div>
-                    <div class="article-body">
-
-                        <div class="tech-category">
-                            <h3 class="tech-category-title">Lenguajes</h3>
-                            <div class="tech-list">
-                                <span class="tech-pill">JavaScript</span>
-                                <span class="tech-pill">TypeScript</span>
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">Php</span>
-                                <span class="tech-pill">C#</span>
-                                <span class="tech-pill">Java</span>
-                            </div>
-                        </div>
-
-                        <div class="tech-category">
-                            <h3 class="tech-category-title">Frontend</h3>
-                            <div class="tech-list">
-                                <span class="tech-pill">Angular</span>
-                                <span class="tech-pill">React</span>
-                                <span class="tech-pill">Vue.js</span>
-                            </div>
-                        </div>
-
-                        <div class="tech-category">
-                            <h3 class="tech-category-title">Backend</h3>
-                            <div class="tech-list">
-                                <span class="tech-pill">.NET</span>
-                                <span class="tech-pill">Laravel</span>
-                                <span class="tech-pill">Node.js</span>
-                            </div>
-                        </div>
-
-                        <div class="tech-category">
-                            <h3 class="tech-category-title">Bases de datos</h3>
-                            <div class="tech-list">
-                                <span class="tech-pill">MongoDB</span>
-                                <span class="tech-pill">MySql</span>
-                                <span class="tech-pill">MariaDB</span>
-                            </div>
-                        </div>
-
-                        <div class="tech-category">
-                            <h3 class="tech-category-title">DevOps & Tools</h3>
-                            <div class="tech-list">
-                                <span class="tech-pill">Docker</span>
-                                <span class="tech-pill">Git</span>
-                                <span class="tech-pill">GitHub</span>
-                                <span class="tech-pill">GitLab</span>
-                            </div>
-                        </div>
-
-                        <div class="tech-category">
-                            <h3 class="tech-category-title">Arquitectura y buenas prácticas</h3>
-                            <div class="tech-list">
-                                <span class="tech-pill">Principios SOLID</span>
-                                <span class="tech-pill">Patrones de diseño</span>
-                                <span class="tech-pill">Clean Code</span>
-                            </div>
-                        </div>
-
-                        <div class="tech-category">
-                            <h3 class="tech-category-title">Metodologías</h3>
-                            <div class="tech-list">
-                                <span class="tech-pill">Scrum</span>
-                                <span class="tech-pill">Kanban</span>
-                            </div>
-                        </div>
-                </article>
-                <article class="article article-proyects">
-                    <div class="article-header">
-                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"
-                            height="24px" fill="currentColor">
-                            <path
-                                d="M24,19V4c0-1.654-1.346-3-3-3H3C1.346,1,0,2.346,0,4v15H11v2H6v2h12v-2h-5v-2h11ZM13.706,6.709l1.414-1.414,3.298,3.299c.775,.775,.775,2.037,0,2.812l-3.299,3.299-1.414-1.414,3.298-3.299-3.298-3.283Zm-3.411,6.582l-1.414,1.414-3.298-3.299c-.775-.775-.775-2.037,0-2.812l3.299-3.299,1.414,1.414-3.298,3.299,3.298,3.283Z" />
-                        </svg>
-                        <h2 class="article-title">Proyectos</h2>
-                    </div>
-
-                    <div class="article-body">
-
-                        <div class="project-card">
-                            <div class="card-header">
-                                <h2 class="card-title">Zoo: Senda Animal</h2>
-                                <em class="card-description">
-                                    Sitio web informativo sobre un zoológico ficticio, desarrollado con Angular, SCSS.
-                                </em>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-span">
-                                    Este proyecto se encuentra en desarrollo. Quiero
-                                    aplicar buenas prácticas de desarrollo y emplear patrones de diseño.
-                                </p>
-                                <p class="text-span">
-                                    Tecnologías: <strong>Angular</strong>, <strong>principios SOLID</strong> y
-                                    <strong>patrones de
-                                        diseño</strong>.
-                                </p>
-
-                                <a class="link" href="https://senda-animal.vercel.app/home" target="_blank">Visitar
-                                    proyecto:
-                                    <em>https://senda-animal.vercel.app/home</em></a>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="card-header">
-                                <h2 class="card-title">Analizador de minerales</h2>
-                                <em class="card-description">
-                                    Una aplicación en Angular para practicar y demostrar arquitectura y buenas prácticas
-                                    de
-                                    código.
-                                </em>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-span">
-                                    Tecnologías: <strong>Angular</strong>, <strong>principios SOLID</strong> y
-                                    <strong>patrones de
-                                        diseño</strong>.
-                                </p>
-
-                                <a class="link" href="https://andresaragonguerrero.github.io/analizadorMinerales/"
-                                    target="_blank">Visitar proyecto:
-                                    <em>https://andresaragonguerrero.github.io/analizadorMinerales/</em></a>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="card-header">
-                                <h2 class="card-title">Librería Pirámide</h2>
-                                <em class="card-description">
-                                    Maquetación y diseño frontend creativo para una librería ficticia.
-                                </em>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-span">
-                                    Este proyecto fue un ejercicio centrado en la maquetación avanzada con CSS y la
-                                    mejora
-                                    de la experiencia de usuario a través de pequeñas interacciones.
-                                </p>
-                                <p class="text-span">
-                                    Tecnologías: <strong>HTML5</strong>, <strong>CSS3</strong>,
-                                    <strong>JavaScript</strong>.
-                                </p>
-
-                                <a class="link" href="https://aragonaj.github.io/LibreriaPiramide/"
-                                    target="_blank">Visitar proyecto:
-                                    <em>https://aragonaj.github.io/LibreriaPiramide/</em></a>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="card-header">
-                                <h2 class="card-title">Bestashop: frontend de un ecommerce</h2>
-                                <em class="card-description">
-                                    Aplicación web de demostración de una tienda online desarrollada con Angular.
-                                    Incluye catálogo de productos, filtros, carrito de compra y gestión de sesión de
-                                    usuario.
-                                </em>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-span">
-                                    El propósito de este proyecto fue practicar junto con unos compañeros la arquitectura de una aplicación
-                                    frontend basada en componentes.
-                                </p>
-                                <p class="text-span">
-                                    Tecnologías: <strong>Angular</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>,
-                                    <strong>TypeScript</strong>.
-                                </p>
-
-                                <a class="link" href="https://bestashop.vercel.app/" target="_blank">Visitar
-                                    proyecto: <em>https://bestashop.vercel.app/</em></a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+            <section class="header__about">
+                <p class="header__about-text">
+                    Soy desarrollador fullstack junior formado con una base sólida en desarrollo web.
+                    Aunque sea en proyectos sencillos, me importa que el software sea entendible y escalable.
+                </p>
+                <p class="header__about-text">
+                    No busco solamente que algo funcione; sino también comprender por qué funciona de esta
+                    manera y cómo encaja con el resto del código.
+                    Además de que me gusta trabajar en equipo, soy meticuloso y
+                    me tomo muy en serio el hacer las cosas bien.
+                </p>
             </section>
-        </div>
+            <section class="header__contact">
+                <div class="header__contact-item">
+                    <svg class="contact-icon icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25px"
+                        height="25px">
+                        <g fill="currentColor">
+                            <path
+                                d="M22 7.535V17a3 3 0 0 1-2.824 2.995L19 20H5a3 3 0 0 1-2.995-2.824L2 17V7.535l9.445 6.297l.116.066a1 1 0 0 0 .878 0l.116-.066z" />
+                            <path
+                                d="M19 4c1.08 0 2.027.57 2.555 1.427L12 11.797l-9.555-6.37a3 3 0 0 1 2.354-1.42L5 4z" />
+                        </g>
+                    </svg>
+                    <p class="contact-text">ajaragon@proton.me</p>
+                </div>
+                <div class="header__contact-item">
+                    <svg class="contact-icon icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25px"
+                        height="25px">
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2">
+                            <path d="M19.5 7A9 9 0 0 0 12 3a8.99 8.99 0 0 0-7.484 4" />
+                            <path
+                                d="M11.5 3a17 17 0 0 0-1.826 4M12.5 3a17 17 0 0 1 1.828 4M19.5 17a9 9 0 0 1-7.5 4a8.99 8.99 0 0 1-7.484-4" />
+                            <path
+                                d="M11.5 21a17 17 0 0 1-1.826-4m2.826 4a17 17 0 0 0 1.828-4M2 10l1 4l1.5-4L6 14l1-4m10 0l1 4l1.5-4l1.5 4l1-4M9.5 10l1 4l1.5-4l1.5 4l1-4" />
+                        </g>
+                    </svg>
+                    <p class="contact-text">andresaragon.es</p>
+                </div>
+                <div class="header__contact-item">
+                    <svg class="contact-icon icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25px"
+                        height="25px">
+                        <path fill="currentColor"
+                            d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm-9 8a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1m6 0a3 3 0 0 0-1.168.236l-.125.057A1 1 0 0 0 11 11v5a1 1 0 0 0 2 0v-3a1 1 0 0 1 2 0v3a1 1 0 0 0 2 0v-3a3 3 0 0 0-3-3M8 7a1 1 0 0 0-.993.883L7 8.01a1 1 0 0 0 1.993.117L9 8a1 1 0 0 0-1-1" />
+                    </svg>
+                    <p class="contact-text">/ajaragon</p>
+                </div>
+                <div class="header__contact-item">
+                    <svg class="contact-icon icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25px"
+                        height="25px">
+                        <path fill="currentColor"
+                            d="M5.315 2.1c.791-.113 1.9.145 3.333.966l.272.161l.16.1l.397-.083a13.3 13.3 0 0 1 4.59-.08l.456.08l.396.083l.161-.1c1.385-.84 2.487-1.17 3.322-1.148l.164.008l.147.017l.076.014l.05.011l.144.047a1 1 0 0 1 .53.514a5.2 5.2 0 0 1 .397 2.91l-.047.267l-.046.196l.123.163c.574.795.93 1.728 1.03 2.707l.023.295L21 9.5c0 3.855-1.659 5.883-4.644 6.68l-.245.061l-.132.029l.014.161l.008.157l.004.365l-.002.213L16 21a1 1 0 0 1-.883.993L15 22H9a1 1 0 0 1-.993-.883L8 21v-.734c-1.818.26-3.03-.424-4.11-1.878l-.535-.766c-.28-.396-.455-.579-.589-.644l-.048-.019a1 1 0 0 1 .564-1.918c.642.188 1.074.568 1.57 1.239l.538.769c.76 1.079 1.36 1.459 2.609 1.191L8 17.562l-.018-.168a5 5 0 0 1-.021-.824l.017-.185l.019-.12l-.108-.024c-2.976-.71-4.703-2.573-4.875-6.139l-.01-.31L3 9.5a5.6 5.6 0 0 1 .908-3.051l.152-.222l.122-.163l-.045-.196a5.2 5.2 0 0 1 .145-2.642l.1-.282l.106-.253a1 1 0 0 1 .529-.514l.144-.047z" />
+                    </svg>
+                    <p class="contact-text">/andresaragonguerrero</p>
+                </div>
+            </section>
+        </header>
+
+        <main class="main">
+
+            <div class="main-left">
+                <section class="section">
+                    <div class="section__header">
+                        <h3 class="section__title">Experiencia</h3>
+                    </div>
+                    <div class="section__body">
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Desarrollador fullstack en prácticas <span>(2025)</span>
+                                </h3>
+                                <p class="card__header-info">80h</p>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__body-title">Ecomputer</h3>
+                                <div class="card__body-chores">
+                                    <p class="chores-text">
+                                        <span>Tareas: </span>Desarrollo y mantenimiento de funcionalidades sobre una
+                                        aplicación existente, consumo de APIs, implementación de filtros de
+                                        búsqueda.
+                                    </p>
+                                </div>
+                                <div class="card__body-tech">
+                                    <p class="tech-text">
+                                        <span>Tecnologías: </span>Laravel, Vue.js y TailwindCSS.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Desarrollador de software en prácticas
+                                    <span>(2023)</span>
+                                </h3>
+                                <p class="card__header-info">400h</p>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__body-title">SEIDOR</h3>
+                                <div class="card__body-chores">
+                                    <p class="chores-text">
+                                        <span>Tareas: </span>Desarrollo de funcionalidades de gestión de datos, diseño e
+                                        implementación de interfaces, desarrollo de sistemas de búsqueda y
+                                        filtrado de información
+                                    </p>
+                                </div>
+                                <div class="card__body-tech">
+                                    <p class="tech-text">
+                                        <span>Tecnologías: </span>RPG AS/400.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section__header">
+                        <h3 class="section__title">Educación</h3>
+                    </div>
+                    <div class="section__body">
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">PRO-IN TIC: Desarrollo Front-end</h3>
+                                <p class="card__header-info">2025-26</p>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__body-title">Fundación Ibercaja</h3>
+                                <p class="tech-text">
+                                    <span>Especializaciones: </span>Angular, Principios SOLID, patrones de diseño y
+                                    metodologías ágiles
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Desarrollo de Aplicaciones Web</h3>
+                                <p class="card__header-info">2021-23</p>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__body-title">C.P.I.F.P. "Los Enlaces"</h3>
+                                <p class="tech-text">
+                                    <span>Especializaciones: </span>HTML5, CSS3, JavaScript, Java, PHP, Laravel, BBDD,
+                                    SQL, Docker, Consumo de APIs REST
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section__header">
+                        <h3 class="section__title">Idiomas</h3>
+                    </div>
+                    <div class="section__body">
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Inglés</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="language-text">
+                                    B2: entiendo sin problemas textos técnicos y de desarrollo, y conversaciones sobre
+                                    temas cotidianos y técnicos.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Francés</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="language-text">
+                                    B1: entiendo sin problemas textos técnicos, de desarrollo y textos
+                                    literarios
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <div class="main-right">
+                <section class="section">
+                    <div class="section__header">
+                        <h3 class="section__title">Proyectos</h3>
+                    </div>
+                    <div class="section__body">
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Senda animal</h3>
+                                <p class="card__header-description">
+                                    Aplicación web de un zoo ficticio desarrollada con Angular y TypeSript
+                                </p>
+                            </div>
+                            <div class="card__body">
+                                <div class="card__info">
+                                    <p class="tech-text">
+                                        <span>Tecnologías: </span>Angular, TypeScript, SCSS.
+                                    </p>
+                                </div>
+                                <ul class="card__features-list">
+                                    <li class="card__feature-item">
+                                        <svg class="card__feature-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" width="25px" height="25px">
+                                            <path fill="currentColor"
+                                                d="M10.425 1.414L3.65 5.41A3.21 3.21 0 0 0 2 8.217v7.285a3.23 3.23 0 0 0 1.678 2.826l6.695 4.237c1.034.57 2.22.57 3.2.032l6.804-4.302c.98-.537 1.623-1.618 1.623-2.793V8.218l-.005-.204a3.22 3.22 0 0 0-1.284-2.39l-.107-.075l-.007-.007a1 1 0 0 0-.181-.133L13.64 1.414a3.33 3.33 0 0 0-3.216 0z" />
+                                        </svg>
+                                        <p class="feature-text">
+                                            Arquitectura modular por funcionalidades, separando core, features, shared y
+                                            pages.
+                                        </p>
+                                    </li>
+                                    <li class="card__feature-item">
+                                        <svg class="card__feature-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" width="25px" height="25px">
+                                            <path fill="currentColor"
+                                                d="M10.425 1.414L3.65 5.41A3.21 3.21 0 0 0 2 8.217v7.285a3.23 3.23 0 0 0 1.678 2.826l6.695 4.237c1.034.57 2.22.57 3.2.032l6.804-4.302c.98-.537 1.623-1.618 1.623-2.793V8.218l-.005-.204a3.22 3.22 0 0 0-1.284-2.39l-.107-.075l-.007-.007a1 1 0 0 0-.181-.133L13.64 1.414a3.33 3.33 0 0 0-3.216 0z" />
+                                        </svg>
+                                        <p class="feature-text">
+                                            Aplicación de patrones de diseño, especialmente Strategy y Factory para
+                                            precios, matriculaciones, usuarios y entradas.
+                                        </p>
+                                    </li>
+                                    <li class="card__feature-item">
+                                        <svg class="card__feature-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" width="25px" height="25px">
+                                            <path fill="currentColor"
+                                                d="M10.425 1.414L3.65 5.41A3.21 3.21 0 0 0 2 8.217v7.285a3.23 3.23 0 0 0 1.678 2.826l6.695 4.237c1.034.57 2.22.57 3.2.032l6.804-4.302c.98-.537 1.623-1.618 1.623-2.793V8.218l-.005-.204a3.22 3.22 0 0 0-1.284-2.39l-.107-.075l-.007-.007a1 1 0 0 0-.181-.133L13.64 1.414a3.33 3.33 0 0 0-3.216 0z" />
+                                        </svg>
+                                        <p class="feature-text">
+                                            Integración y abstracción de acceso a datos, mediante repositorios y
+                                            servicios para usuarios, animales, actividades, cursos y entradas.
+                                        </p>
+                                    </li>
+                                    <li class="card__feature-item">
+                                        <svg class="card__feature-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" width="25px" height="25px">
+                                            <path fill="currentColor"
+                                                d="M10.425 1.414L3.65 5.41A3.21 3.21 0 0 0 2 8.217v7.285a3.23 3.23 0 0 0 1.678 2.826l6.695 4.237c1.034.57 2.22.57 3.2.032l6.804-4.302c.98-.537 1.623-1.618 1.623-2.793V8.218l-.005-.204a3.22 3.22 0 0 0-1.284-2.39l-.107-.075l-.007-.007a1 1 0 0 0-.181-.133L13.64 1.414a3.33 3.33 0 0 0-3.216 0z" />
+                                        </svg>
+                                        <p class="feature-text">
+                                            Sistema de autenticación y control de acceso, con login/registro y guards.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Hotel Argyros</h3>
+                                <p class="card__header-description">
+                                    Una aplicación web de un hotel ficticio desarrollada con .NET, Angular y TypeScript.
+                                </p>
+                            </div>
+                            <div class="card__body">
+                                <div class="card__info">
+                                    <p class="tech-text">
+                                        <span>Tecnologías: </span>Angular, .NET, SCSS.
+                                    </p>
+                                </div>
+                                <ul class="card__features-list">
+                                    <li class="card__feature-item">
+                                        <svg class="card__feature-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" width="25px" height="25px">
+                                            <path fill="currentColor"
+                                                d="M10.425 1.414L3.65 5.41A3.21 3.21 0 0 0 2 8.217v7.285a3.23 3.23 0 0 0 1.678 2.826l6.695 4.237c1.034.57 2.22.57 3.2.032l6.804-4.302c.98-.537 1.623-1.618 1.623-2.793V8.218l-.005-.204a3.22 3.22 0 0 0-1.284-2.39l-.107-.075l-.007-.007a1 1 0 0 0-.181-.133L13.64 1.414a3.33 3.33 0 0 0-3.216 0z" />
+                                        </svg>
+                                        <p class="feature-text">
+                                            Arquitectura por capas, separando Domain, Application e Infrastructure.
+                                        </p>
+                                    </li>
+                                    <li class="card__feature-item">
+                                        <svg class="card__feature-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" width="25px" height="25px">
+                                            <path fill="currentColor"
+                                                d="M10.425 1.414L3.65 5.41A3.21 3.21 0 0 0 2 8.217v7.285a3.23 3.23 0 0 0 1.678 2.826l6.695 4.237c1.034.57 2.22.57 3.2.032l6.804-4.302c.98-.537 1.623-1.618 1.623-2.793V8.218l-.005-.204a3.22 3.22 0 0 0-1.284-2.39l-.107-.075l-.007-.007a1 1 0 0 0-.181-.133L13.64 1.414a3.33 3.33 0 0 0-3.216 0z" />
+                                        </svg>
+                                        <p class="feature-text">
+                                            Patrón Repository, desacoplando la lógica de negocio del acceso a datos.
+                                        </p>
+                                    </li>
+                                    <li class="card__feature-item">
+                                        <svg class="card__feature-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" width="25px" height="25px">
+                                            <path fill="currentColor"
+                                                d="M10.425 1.414L3.65 5.41A3.21 3.21 0 0 0 2 8.217v7.285a3.23 3.23 0 0 0 1.678 2.826l6.695 4.237c1.034.57 2.22.57 3.2.032l6.804-4.302c.98-.537 1.623-1.618 1.623-2.793V8.218l-.005-.204a3.22 3.22 0 0 0-1.284-2.39l-.107-.075l-.007-.007a1 1 0 0 0-.181-.133L13.64 1.414a3.33 3.33 0 0 0-3.216 0z" />
+                                        </svg>
+                                        <p class="feature-text">
+                                            Modelado de dominio y lógica de negocio, con servicios específicos de
+                                            disponibilidad, precios, descuentos y reservas.
+                                        </p>
+                                    </li>
+                                    <li class="card__feature-item">
+                                        <svg class="card__feature-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" width="25px" height="25px">
+                                            <path fill="currentColor"
+                                                d="M10.425 1.414L3.65 5.41A3.21 3.21 0 0 0 2 8.217v7.285a3.23 3.23 0 0 0 1.678 2.826l6.695 4.237c1.034.57 2.22.57 3.2.032l6.804-4.302c.98-.537 1.623-1.618 1.623-2.793V8.218l-.005-.204a3.22 3.22 0 0 0-1.284-2.39l-.107-.075l-.007-.007a1 1 0 0 0-.181-.133L13.64 1.414a3.33 3.33 0 0 0-3.216 0z" />
+                                        </svg>
+                                        <p class="feature-text">
+                                            API REST con DTOs, separando los modelos internos de los contratos de
+                                            entrada/salida.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section__header">
+                        <h3 class="section__title">Herramientas</h3>
+                    </div>
+                    <div class="section__body">
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Lenguajes:</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="tool-text">JavaScript, TypeScript, Java, C#, Php, Python</p>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Frontend:</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="tool-text">Angular, Vue.js, React.js</p>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Backend:</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="tool-text">.NET, Laravel, Node.js</p>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Bases de datos:</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="tool-text">MongoDb, MySQL, MariaDB</p>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">DevOps & Tools:</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="tool-text">Docker, Git, GitHub, GitLab</p>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Arquitectura y buenas prácticas:</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="tool-text">Principios SOLID, Patrones de diseño, Clean Code</p>
+                            </div>
+                        </article>
+                        <article class="section__card">
+                            <div class="card__header">
+                                <h3 class="card__header-title">Metodologías:</h3>
+                            </div>
+                            <div class="card__body">
+                                <p class="tool-text">Scrum, Kanban</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+
     </div>
-</body>
+    <script>
+        window.onload = function () {
+            window.print();
+        };
+    </script>
+</body>    
