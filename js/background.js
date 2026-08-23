@@ -19,8 +19,7 @@
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d", {
-        alpha: true,
-        desynchronized: true
+        alpha: true
     });
 
     if (!ctx) return;
