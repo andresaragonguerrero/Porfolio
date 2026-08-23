@@ -26,9 +26,6 @@
 
     let width = 0;
     let height = 0;
-    let lastWidth = 0;
-    let lastHeight = 0;
-    let resizeTimeout = null;
 
     function resize() {
         width = window.innerWidth;
@@ -43,22 +40,6 @@
         canvas.style.height = height + "px";
 
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-        lastWidth = width;
-        lastHeight = height;
-    }
-
-    function scheduleResize() {
-        const newWidth = window.innerWidth;
-        const newHeight = window.innerHeight;
-
-        const widthChanged = Math.abs(newWidth - lastWidth) > 5;
-        const heightChanged = Math.abs(newHeight - lastHeight) > 100;
-
-        if (!widthChanged && !heightChanged) return;
-
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(resize, 150);
     }
 
     function render(time = 0) {
@@ -138,7 +119,7 @@
         requestAnimationFrame(render);
     }
 
-    window.addEventListener("resize", scheduleResize);
+    window.addEventListener("resize", resize);
 
     resize();
     render();
