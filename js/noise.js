@@ -2,7 +2,7 @@
     "use strict";
 
     const CONFIG = {
-        opacity: 0.05
+        opacity: 0.06
     };
 
     const canvas = document.createElement("canvas");
