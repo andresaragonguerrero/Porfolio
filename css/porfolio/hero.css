@@ -224,15 +224,15 @@
 }
 
 .marquee-row--left .marquee-track {
-    animation: marquee-to-left 40s linear infinite;
+    animation: marquee-to-left 100s linear infinite;
 }
 
 .marquee-row--right .marquee-track {
-    animation: marquee-to-right 60s linear infinite;
+    animation: marquee-to-right 120s linear infinite;
 }
 
 .marquee-row:nth-child(2) .marquee-track {
-    animation-duration: 50s;
+    animation-duration: 140s;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -299,14 +299,14 @@
     }
 
     .marquee-row--left .marquee-track {
-        animation-play-state: paused;
+        animation: marquee-to-left 200s linear infinite;
     }
 
     .marquee-row--right .marquee-track {
-        animation-play-state: paused;
+        animation: marquee-to-right 220s linear infinite;
     }
 
     .marquee-row:nth-child(2) .marquee-track {
-        animation-play-state: paused;
+        animation-duration: 240s;
     }
 }
