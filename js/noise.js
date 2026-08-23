@@ -2,7 +2,7 @@
     "use strict";
 
     const CONFIG = {
-        opacity: 0.06
+        opacity: 0.05
     };
 
     const canvas = document.createElement("canvas");
@@ -26,21 +26,20 @@
 
     document.documentElement.appendChild(canvas);
 
-    let width = 0;
-    let height = 0;
-
     function createNoise() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-
+        const width = window.innerWidth;
+        const height = window.innerHeight;
         const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
+        const pixelWidth = Math.round(width * dpr);
+        const pixelHeight = Math.round(height * dpr);
 
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        canvas.width = pixelWidth;
+        canvas.height = pixelHeight;
 
-        const image = ctx.createImageData(width, height);
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+        const image = ctx.createImageData(pixelWidth, pixelHeight);
         const data = image.data;
 
         for (let i = 0; i < data.length; i += 4) {
