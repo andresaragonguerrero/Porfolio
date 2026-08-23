@@ -297,4 +297,16 @@
     .hero__date {
         white-space: nowrap;
     }
+
+    .marquee-row--left .marquee-track {
+        animation-play-state: paused;
+    }
+
+    .marquee-row--right .marquee-track {
+        animation-play-state: paused;
+    }
+
+    .marquee-row:nth-child(2) .marquee-track {
+        animation-play-state: paused;
+    }
 }
