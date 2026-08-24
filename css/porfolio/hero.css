@@ -20,9 +20,11 @@
 }
 
 .hero--pinned {
+    height: 100vh;
+    width: calc(var(--col-width) * var(--content-cols));
     position: fixed;
-    left: calc(var(--header-columns) * var(--col-width));
-    width: calc(100vw - (var(--header-columns) * var(--col-width)));
+    top: 0;
+    left: calc(var(--col-width) * var(--header-columns));
 }
 
 .hero__info-container {
@@ -237,15 +239,18 @@
 
 @media only screen and (max-width: 1400px) {
     .hero {
-        height: calc(100dvh - var(--header-height-mobile));
+        height: calc(100dvh - var(--header-height-mobile, 3rem));
     }
 
     .hero--pinned {
-        top: var(--header-height-mobile);
+        height: calc(100dvh - var(--header-height-mobile, 3rem));
+        width: 100%;
+        top: var(--header-height-mobile, 3rem);
+        left: 0;
     }
 
     .hero-pin {
-        height: calc(100dvh - var(--header-height-mobile) + var(--hero-shrink-distance, 50dvh) + var(--hero-ascend-distance, 50dvh));
+        height: calc(100dvh - var(--header-height-mobile, 3rem) + var(--hero-shrink-distance, 50dvh) + var(--hero-ascend-distance, 50dvh));
     }
 }
 

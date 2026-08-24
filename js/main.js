@@ -122,20 +122,26 @@ sections.forEach(section => observer.observe(section));
 
   function updatePinState(scrolled, totalDistance) {
     if (scrolled <= 0) {
-      hero.classList.remove('hero--pinned');
-      hero.style.top = '0px';
+      hero.classList.remove('hero--pinned', 'hero--ended');
+      hero.style.top = '';
     } else if (scrolled < totalDistance) {
       hero.classList.add('hero--pinned');
-      hero.style.top = '0px';
+      hero.classList.remove('hero--ended');
+      hero.style.top = '';
     } else {
       hero.classList.remove('hero--pinned');
+      hero.classList.add('hero--ended');
       hero.style.top = totalDistance + 'px';
     }
   }
 
   function loop() {
     const rect = wrapper.getBoundingClientRect();
-    const scrolled = -rect.top;
+    const isMobile = window.innerWidth <= 1400;
+    const headerOffset = isMobile ? resolveDistance('--header-height-mobile', '3rem') : 0;
+
+    // Compensamos el offset únicamente en móvil para evitar el salto de scroll inicial
+    const scrolled = -(rect.top - headerOffset);
     const totalDistance = shrinkDistance + ascendDistance;
 
     const shrinkLinear = shrinkDistance > 0
