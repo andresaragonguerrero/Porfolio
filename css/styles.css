@@ -6,8 +6,8 @@
     --content-cols: calc(var(--grid-columns) - var(--header-columns));
     --content-grid: repeat(var(--content-cols), 1fr);
 
-    --hero-shrink-distance: 80dvh;
-    --hero-ascend-distance: 100dvh;
+    --hero-shrink-distance: 45dvh;
+    --hero-ascend-distance: 60dvh;
     --hero-final-scale: 0.5;
 
     --header-height-mobile: 3rem;
