@@ -1,5 +1,3 @@
-// función para obtener la fecha actual
-
 document.addEventListener("DOMContentLoaded", () => {
   const dateElement = document.getElementById("current-date");
   const today = new Date();
@@ -19,8 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// menú despegable
-
 const menuButton = document.getElementById('menu-button');
 const menuOverlay = document.querySelector('.menu-overlay');
 
@@ -29,8 +25,6 @@ menuButton.addEventListener('click', () => {
   menuButton.classList.toggle('is-active', isActive);
   document.body.classList.toggle('no-scroll', isActive);
 });
-
-// Función para cerrar el menú cuando el usuario pulse un enlace interno
 
 const menuLinks = menuOverlay.querySelectorAll('a[href^="#"]');
 
@@ -41,8 +35,6 @@ menuLinks.forEach(link => {
     document.body.classList.remove('no-scroll');
   });
 });
-
-// Cambiar el tema de la landing dependiendo de la fecha
 
 function applySeasonalPalette() {
   const hoy = new Date();
@@ -65,8 +57,6 @@ function applySeasonalPalette() {
 
 applySeasonalPalette();
 
-// sección activa
-
 const sectionText = document.querySelector('.header__section-text');
 const sections = document.querySelectorAll('.section[data-section]');
 
@@ -84,12 +74,15 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(section => observer.observe(section));
 
-// función para encoger y hacer ascender el hero
-// (dos fases independientes: primero encoge centrado, luego asciende)
-
 (() => {
   const wrapper = document.getElementById('heroPin');
   const hero = wrapper.querySelector('.hero');
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
 
   function resolveDistance(varName, fallback) {
     const raw = getComputedStyle(document.documentElement)
@@ -111,25 +104,14 @@ sections.forEach(section => observer.observe(section));
   let shrinkDistance = resolveDistance('--hero-shrink-distance', '50dvh');
   let ascendDistance = resolveDistance('--hero-ascend-distance', '50dvh');
 
-  let ticking = false;
+  const SMOOTHING = 0.10;
+  const SETTLE_EPSILON = 0.001;
 
-  function update() {
-    const rect = wrapper.getBoundingClientRect();
-    const scrolled = -rect.top;
-    const totalDistance = shrinkDistance + ascendDistance;
+  let currentShrink = 0;
+  let currentAscend = 0;
+  let animationId = null;
 
-    const shrinkProgress = shrinkDistance > 0
-      ? Math.min(Math.max(scrolled / shrinkDistance, 0), 1)
-      : 0;
-
-    const ascendScrolled = scrolled - shrinkDistance;
-    const ascendProgress = ascendDistance > 0
-      ? Math.min(Math.max(ascendScrolled / ascendDistance, 0), 1)
-      : 0;
-
-    hero.style.setProperty('--shrink-progress', shrinkProgress);
-    hero.style.setProperty('--ascend-progress', ascendProgress);
-
+  function updatePinState(scrolled, totalDistance) {
     if (scrolled <= 0) {
       hero.classList.remove('hero--pinned');
       hero.style.top = '0px';
@@ -140,29 +122,64 @@ sections.forEach(section => observer.observe(section));
       hero.classList.remove('hero--pinned');
       hero.style.top = totalDistance + 'px';
     }
-
-    ticking = false;
   }
 
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(update);
-      ticking = true;
+  function loop() {
+    const rect = wrapper.getBoundingClientRect();
+    const scrolled = -rect.top;
+    const totalDistance = shrinkDistance + ascendDistance;
+
+    const shrinkLinear = shrinkDistance > 0
+      ? Math.min(Math.max(scrolled / shrinkDistance, 0), 1)
+      : 0;
+
+    const ascendScrolled = scrolled - shrinkDistance;
+    const ascendLinear = ascendDistance > 0
+      ? Math.min(Math.max(ascendScrolled / ascendDistance, 0), 1)
+      : 0;
+
+    const targetShrink = easeInOutCubic(shrinkLinear);
+    const targetAscend = easeInOutCubic(ascendLinear);
+
+    currentShrink += (targetShrink - currentShrink) * SMOOTHING;
+    currentAscend += (targetAscend - currentAscend) * SMOOTHING;
+
+    hero.style.setProperty('--shrink-progress', currentShrink);
+    hero.style.setProperty('--ascend-progress', currentAscend);
+
+    updatePinState(scrolled, totalDistance);
+
+    const shrinkSettled = Math.abs(targetShrink - currentShrink) < SETTLE_EPSILON;
+    const ascendSettled = Math.abs(targetAscend - currentAscend) < SETTLE_EPSILON;
+
+    if (shrinkSettled && ascendSettled) {
+      currentShrink = targetShrink;
+      currentAscend = targetAscend;
+      hero.style.setProperty('--shrink-progress', currentShrink);
+      hero.style.setProperty('--ascend-progress', currentAscend);
+      animationId = null;
+      return;
+    }
+
+    animationId = requestAnimationFrame(loop);
+  }
+
+  function ensureLoopRunning() {
+    if (animationId === null) {
+      animationId = requestAnimationFrame(loop);
     }
   }
 
   function onResize() {
     shrinkDistance = resolveDistance('--hero-shrink-distance', '50dvh');
     ascendDistance = resolveDistance('--hero-ascend-distance', '50dvh');
-    onScroll();
+    ensureLoopRunning();
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', ensureLoopRunning, { passive: true });
   window.addEventListener('resize', onResize);
-  update();
+  ensureLoopRunning();
 })();
-
-// función para desplegar y contraer los proyectos
 
 document.addEventListener('DOMContentLoaded', () => {
   const observerOptions = {
@@ -184,8 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const elementsToObserve = document.querySelectorAll('.u-fade-blur, .projects__carousel-container');
   elementsToObserve.forEach(el => observer.observe(el));
 });
-
-// función para el carrusel
 
 document.addEventListener('DOMContentLoaded', () => {
   const AUTOPLAY_DELAY = 3000;
