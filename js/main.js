@@ -1,3 +1,12 @@
+function enableHoverClass(event) {
+  if (event.pointerType === 'mouse') {
+    document.documentElement.classList.add('has-hover');
+    window.removeEventListener('pointermove', enableHoverClass);
+  }
+}
+
+window.addEventListener('pointermove', enableHoverClass);
+
 document.addEventListener("DOMContentLoaded", () => {
   const dateElement = document.getElementById("current-date");
   const today = new Date();

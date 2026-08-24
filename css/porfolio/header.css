@@ -52,14 +52,12 @@
     transform: translate(calc(-50% - var(--space-xs)), calc(-50% + var(--space-xs)));
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .header__menu-button:hover .header__menu-line:first-child {
-        transform: translate(-50%, calc(-50% - var(--space-xs)));
-    }
+.has-hover .header__menu-button:hover .header__menu-line:first-child {
+    transform: translate(-50%, calc(-50% - var(--space-xs)));
+}
 
-    .header__menu-button:hover .header__menu-line:last-child {
-        transform: translate(-50%, calc(-50% + var(--space-xs)));
-    }
+.has-hover .header__menu-button:hover .header__menu-line:last-child {
+    transform: translate(-50%, calc(-50% + var(--space-xs)));
 }
 
 .header__menu-button.is-active .header__menu-line:first-child {
@@ -70,8 +68,8 @@
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.header__menu-button.is-active:hover .header__menu-line:first-child,
-.header__menu-button.is-active:hover .header__menu-line:last-child {
+.has-hover .header__menu-button.is-active:hover .header__menu-line:first-child,
+.has-hover .header__menu-button.is-active:hover .header__menu-line:last-child {
     transform: translate(-50%, -50%) rotate(0deg);
 }
 
@@ -223,19 +221,12 @@
         transform: translate(calc(-50% - 3px), calc(-50% + 5px));
     }
 
-    @media (hover: hover) and (pointer: fine) {
-        .header__menu-button:hover .header__menu-line:first-child {
-            transform: translate(-50%, calc(-50% - 5px));
-        }
+    .has-hover .header__menu-button:hover .header__menu-line:first-child {
+        transform: translate(-50%, calc(-50% - 5px));
+    }
 
-        .header__menu-button:hover .header__menu-line:last-child {
-            transform: translate(-50%, calc(-50% + 5px));
-        }
-
-        .header__menu-button.is-active:hover .header__menu-line:first-child,
-        .header__menu-button.is-active:hover .header__menu-line:last-child {
-            transform: translate(-50%, -50%) rotate(0deg);
-        }
+    .has-hover .header__menu-button:hover .header__menu-line:last-child {
+        transform: translate(-50%, calc(-50% + 5px));
     }
 }
 
