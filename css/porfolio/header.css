@@ -231,6 +231,11 @@
         .header__menu-button:hover .header__menu-line:last-child {
             transform: translate(-50%, calc(-50% + 5px));
         }
+
+        .header__menu-button.is-active:hover .header__menu-line:first-child,
+        .header__menu-button.is-active:hover .header__menu-line:last-child {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
     }
 }
 
