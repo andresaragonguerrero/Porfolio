@@ -79,11 +79,12 @@
 }
 
 .menu-overlay__author-text {
+    display: block;
     font-family: var(--ff-primary);
     font-size: var(--fs-display);
     font-weight: bold;
     text-transform: uppercase;
-    line-height: 0.9;
+    line-height: 1;
     color: var(--color-text);
 }
 

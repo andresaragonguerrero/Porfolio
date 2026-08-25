@@ -179,6 +179,7 @@
     padding-left: var(--space-lg);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-left: 1px solid var(--color-border);
 }
 
@@ -328,6 +329,7 @@
         grid-row: 4;
         padding: var(--space-sm);
         justify-content: flex-end;
+        gap: var(--space-xs);
     }
 }
 
@@ -351,15 +353,13 @@
     .projects__item:nth-child(4) .projects__description-container {
         grid-column: 1 / -1;
         grid-row: 3;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: var(--space-sm);
-        padding-right: var(--space-xs);
+        padding: var(--space-sm);
         border: none;
         text-align: left;
     }
 
     .projects__tools-wrapper {
+        padding: 0;
         gap: var(--space-xs);
     }
 }

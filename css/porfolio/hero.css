@@ -72,12 +72,19 @@
 
 .hero__author-name {
     max-width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     font-family: var(--ff-primary);
     font-size: var(--fs-display);
     font-weight: bold;
+    line-height: 1.1;
     text-transform: uppercase;
-    line-height: 0.85;
     color: var(--color-text);
+}
+
+.hero__author-name-line {
+    display: block;
 }
 
 .hero__author-role {
@@ -288,6 +295,7 @@
 
     .hero__media-wrapper {
         grid-column: 1 / -1;
+        gap: var(--space-xs);
     }
 
     .hero__date {
@@ -295,14 +303,17 @@
     }
 
     .marquee-row--left .marquee-track {
+        /* animation: marquee-to-left 200s linear infinite; */
         animation-play-state: paused;
     }
 
     .marquee-row--right .marquee-track {
+        /* animation: marquee-to-right 220s linear infinite; */
         animation-play-state: paused;
     }
 
     .marquee-row:nth-child(2) .marquee-track {
+        /* animation-duration: 240s; */
         animation-play-state: paused;
     }
 }
