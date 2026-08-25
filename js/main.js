@@ -8,6 +8,8 @@ function enableHoverClass(event) {
 window.addEventListener('pointermove', enableHoverClass);
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  // función para obtener la fecha actual
   const dateElement = document.getElementById("current-date");
   const today = new Date();
   const formatter = new Intl.DateTimeFormat('es-ES', {
@@ -24,6 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (dateElement) {
     dateElement.textContent = formattedDate;
   }
+
+  // función para mejorar el redimiento
+  const heroSection = document.getElementById('heroPin');
+  const perfObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      heroSection.classList.toggle('is-offscreen', !entry.isIntersecting);
+    });
+  }, { threshold: 0 });
+  perfObserver.observe(heroSection);
 });
 
 const menuButton = document.getElementById('menu-button');
@@ -120,7 +131,7 @@ sections.forEach(section => observer.observe(section));
     shrinkDistance = resolveDistance('--hero-shrink-distance', '50dvh');
     ascendDistance = resolveDistance('--hero-ascend-distance', '50dvh');
     headerOffset = isMobile ? resolveDistance('--header-height-mobile', '3rem') : 0;
-    
+
     const rect = wrapper.getBoundingClientRect();
     wrapperTopOffset = rect.top + window.scrollY;
   }
