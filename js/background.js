@@ -26,6 +26,45 @@
 
     let width = 0;
     let height = 0;
+    let bgColor = "";
+    let waves = [];
+
+    function refreshColors() {
+        bgColor = getCSSVar(CONFIG.backgroundVar, "hsl(210, 15%, 97%)");
+
+        const accentColor = getCSSVar("--color-accent", "hsl(215, 30%, 22%)");
+
+        waves = [
+            {
+                color: accentColor.replace(")", ", 0.02)"),
+                speed: 0.20,
+                amplitude: 140,
+                frequency: 0.002,
+                offset: 0
+            },
+            {
+                color: accentColor.replace(")", ", 0.04)"),
+                speed: 0.16,
+                amplitude: 100,
+                frequency: 0.0015,
+                offset: 1.8
+            },
+            {
+                color: accentColor.replace(")", ", 0.08)"),
+                speed: 0.12,
+                amplitude: 200,
+                frequency: 0.001,
+                offset: 4.1
+            },
+            {
+                color: accentColor.replace(")", ", 0.10)"),
+                speed: 0.10,
+                amplitude: 50,
+                frequency: 0.003,
+                offset: 4.1
+            }
+        ];
+    }
 
     function resize() {
         width = window.innerWidth;
@@ -42,69 +81,10 @@
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    const waves = [
-        {
-            color: "",
-            speed: 0.20,
-            amplitude: 140,
-            frequency: 0.002,
-            offset: 0,
-            alpha: 0.02
-        },
-        {
-            color: "",
-            speed: 0.16,
-            amplitude: 100,
-            frequency: 0.0015,
-            offset: 1.8,
-            alpha: 0.04
-        },
-        {
-            color: "",
-            speed: 0.12,
-            amplitude: 200,
-            frequency: 0.001,
-            offset: 4.1,
-            alpha: 0.08
-        },
-        {
-            color: "",
-            speed: 0.10,
-            amplitude: 50,
-            frequency: 0.003,
-            offset: 4.1,
-            alpha: 0.10
-        }
-    ];
-
-    let lastAccentColor = null;
-
-    function updateWaveColors(accentColor) {
-        if (accentColor === lastAccentColor) return;
-
-        waves.forEach(wave => {
-            wave.color = accentColor.replace(")", `, ${wave.alpha})`);
-        });
-
-        lastAccentColor = accentColor;
-    }
-
     function render(time = 0) {
         time *= 0.001;
 
         ctx.clearRect(0, 0, width, height);
-
-        const bgColor = getCSSVar(
-            CONFIG.backgroundVar,
-            "hsl(210, 15%, 97%)"
-        );
-
-        const accentColor = getCSSVar(
-            "--color-accent",
-            "hsl(215, 30%, 22%)"
-        );
-
-        updateWaveColors(accentColor);
 
         ctx.globalAlpha = 1;
         ctx.globalCompositeOperation = "source-over";
@@ -140,5 +120,6 @@
     window.addEventListener("resize", resize);
 
     resize();
+    refreshColors();
     render();
 })();
