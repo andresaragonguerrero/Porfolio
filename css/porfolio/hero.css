@@ -12,11 +12,13 @@
     transform-origin: 50% 50%;
     --current-scale: calc(1 - (var(--shrink-progress) * (1 - var(--hero-final-scale))));
     transform: scale(var(--current-scale, 1)) translateY(calc(var(--ascend-progress, 0) * -100dvh));
-    will-change: transform;
+    contain: layout paint style;
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), 1fr);
     grid-template-rows: 50dvh 1fr auto;
     background-color: var(--color-bg);
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .hero--pinned {
@@ -161,6 +163,7 @@
     inset: 0;
     z-index: -1;
     background-color: var(--color-border);
+    contain: strict;
     pointer-events: none;
 }
 
@@ -168,6 +171,7 @@
     content: "";
     position: absolute;
     inset: -50%;
+    transform: translateZ(0);
     background-image:
         radial-gradient(circle at 20% 30%, var(--blob-vivid-1) 0%, transparent 45%),
         radial-gradient(circle at 75% 20%, var(--blob-vivid-2) 0%, transparent 40%),
@@ -210,9 +214,11 @@
 }
 
 .marquee-track {
+    transform: translateZ(0);
     display: flex;
     gap: 2rem;
     flex-shrink: 0;
+    will-change: transform;
 }
 
 .marquee-track span {

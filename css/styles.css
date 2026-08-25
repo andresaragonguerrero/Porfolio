@@ -52,8 +52,9 @@
     box-sizing: border-box;
 }
 
-html, body {
-  overscroll-behavior-y: none;
+html,
+body {
+    overscroll-behavior-y: none;
 }
 
 html {
@@ -82,10 +83,6 @@ body.no-scroll {
     pointer-events: none;
 }
 
-p {
-    line-height: 1.5;
-}
-
 .main {
     position: relative;
     min-width: 0;
@@ -99,7 +96,8 @@ p {
         opacity 1.5s cubic-bezier(0.23, 1, 0.32, 1) .25s,
         filter 1.5s cubic-bezier(0.23, 1, 0.32, 1) .25s,
         transform 1.5s cubic-bezier(0.23, 1, 0.32, 1) .25s;
-    will-change: opacity, filter, transform;
+    /* will-change: opacity, filter, transform; */
+    will-change: opacity, transform;
 }
 
 .projects__item.is-active .u-fade-blur,

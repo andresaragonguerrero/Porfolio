@@ -112,6 +112,18 @@ sections.forEach(section => observer.observe(section));
 
   let shrinkDistance = resolveDistance('--hero-shrink-distance', '50dvh');
   let ascendDistance = resolveDistance('--hero-ascend-distance', '50dvh');
+  let headerOffset = 0;
+  let wrapperTopOffset = 0;
+
+  function updateMetrics() {
+    const isMobile = window.innerWidth <= 1400;
+    shrinkDistance = resolveDistance('--hero-shrink-distance', '50dvh');
+    ascendDistance = resolveDistance('--hero-ascend-distance', '50dvh');
+    headerOffset = isMobile ? resolveDistance('--header-height-mobile', '3rem') : 0;
+    
+    const rect = wrapper.getBoundingClientRect();
+    wrapperTopOffset = rect.top + window.scrollY;
+  }
 
   const SMOOTHING = 0.10;
   const SETTLE_EPSILON = 0.001;
@@ -136,12 +148,7 @@ sections.forEach(section => observer.observe(section));
   }
 
   function loop() {
-    const rect = wrapper.getBoundingClientRect();
-    const isMobile = window.innerWidth <= 1400;
-    const headerOffset = isMobile ? resolveDistance('--header-height-mobile', '3rem') : 0;
-
-    // Compensamos el offset únicamente en móvil para evitar el salto de scroll inicial
-    const scrolled = -(rect.top - headerOffset);
+    const scrolled = window.scrollY - wrapperTopOffset + headerOffset;
     const totalDistance = shrinkDistance + ascendDistance;
 
     const shrinkLinear = shrinkDistance > 0
@@ -186,11 +193,11 @@ sections.forEach(section => observer.observe(section));
   }
 
   function onResize() {
-    shrinkDistance = resolveDistance('--hero-shrink-distance', '50dvh');
-    ascendDistance = resolveDistance('--hero-ascend-distance', '50dvh');
+    updateMetrics();
     ensureLoopRunning();
   }
 
+  updateMetrics();
   window.addEventListener('scroll', ensureLoopRunning, { passive: true });
   window.addEventListener('resize', onResize);
   ensureLoopRunning();
