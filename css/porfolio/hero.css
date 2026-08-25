@@ -310,14 +310,14 @@
     }
 
     .marquee-row--left .marquee-track {
-        animation: marquee-to-left 200s linear infinite;
+        animation-play-state: paused;
     }
 
     .marquee-row--right .marquee-track {
-        animation: marquee-to-right 220s linear infinite;
+        animation-play-state: paused;
     }
 
     .marquee-row:nth-child(2) .marquee-track {
-        animation-duration: 240s;
+        animation-play-state: paused;
     }
 }
