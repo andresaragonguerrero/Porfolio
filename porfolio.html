@@ -330,14 +330,22 @@
 
                         <div class="projects__description-text-wrapper">
                             <p class="project__description-text u-fade-blur">
-                                Sitio web informativo sobre un zoológico ficticio, desarrollado con Angular, SCSS.
+                                Sitio web informativo sobre un zoológico ficticio desarrollado con Angular.
                             </p>
                             <p class="project__description-text u-fade-blur">
-                                Me estoy centrando en aprender a estructurar una aplicación Angular utilizando
-                                componentes y servicios.
-                            </p>
+                                Se basa en una estructura modular por funcionalidades (core, features, shared) mediante
+                                el aislamiento de la lógica de negocio, la capa de datos y la UI.
+
                             <p class="project__description-text u-fade-blur">
-                                Pretendo aplicar buenas prácticas de desarrollo y emplear patrones de diseño.
+                                Implanté repositorios para abstraer el origen de los datos,
+                                estrategias para gestionar reglas de precios y matriculaciones,
+                                y factories para la creación de entidades.
+                                Incluye, además, una autenticación con guards y soporte de internacionalización (i18n).
+                            </p>
+
+                            <p class="project__description-text u-fade-blur">
+                                El dominio es ficticio, pero la arquitectura está pensada para ser mantenible y
+                                testeable en un entorno real.
                             </p>
                         </div>
                         <ul class="projects__tools-wrapper">
@@ -666,13 +674,23 @@
 
                         <div class="projects__description-text-wrapper">
                             <p class="project__description-text u-fade-blur">
-                                Una aplicación en Angular y .NET para practicar y demostrar arquitectura y buenas
-                                prácticas de código.
+                                Para este proyecto estoy haciendo una API en .NET sobre un hotel ficticio, organizada
+                                con Clean Architecture para mantener el dominio, la aplicación y la infraestructura bien
+                                separados.
                             </p>
+
                             <p class="project__description-text u-fade-blur">
-                                Este proyecto se encuentra actualmente en desarrollo. Pretendo demostrar mis
-                                conocimientos tanto en todo lo relacionado con las bases de datos, como el backend y el
-                                frontend.
+                                La lógica de negocio (precios, disponibilidad, descuentos y guardado) vive en el
+                                dominio, y los repositorios se encargan de los datos.
+                                Ahora mismo persisten en JSON, pero al estar desacoplados,
+                                cambiar a una base de datos relacional no tocaría el núcleo de la aplicación.
+                            </p>
+
+                            <p class="projects__description-text-wrapper">
+                                El backend ya tiene los endpoints REST funcionando con DTOs que separan lo que entra y
+                                sale de los modelos internos.
+                                El frontend en Angular todavía lo estoy desarrollando,
+                                pero el backend ya se puede probar y usar de forma aislada.
                             </p>
                         </div>
 
@@ -780,17 +798,24 @@
 
                         <div class="projects__description-text-wrapper">
                             <p class="project__description-text u-fade-blur">
-                                Maquetación y diseño frontend creativo para una librería ficticia.
+                                Este proyecto es el remaster de la primera aplicación que hice cuando terminé el grado.
+                                La versión original cumplía, pero la maquetación era un desastre: todo a parches, sin
+                                orden visual.
+                                Con esta nueva versión quería aplicar todo lo que he aprendido desde entonces, sobre
+                                todo en diseño y estructura de interfaz.
                             </p>
+
                             <p class="project__description-text u-fade-blur">
-                                Este proyecto fue un ejercicio centrado en la maquetación avanzada con CSS y la mejora
-                                de la experiencia de usuario a través de pequeñas interacciones, priorizando la
-                                creatividad visual y la fluidez sobre la lógica compleja.
+                                Está montado con Vue y TypeScript, y aunque he organizado la lógica en servicios y
+                                repositorios, el peso real del proyecto está en la capa visual.
+                                He trabajado el layout con Grid y Flexbox hasta que cada sección encajara.
                             </p>
+
                             <p class="project__description-text u-fade-blur">
-                                Este proyecto me permitió profundizar en el control preciso del layout con Flexbox/Grid,
-                                el uso estratégico de transiciones y animaciones CSS para guiar la atención, y la
-                                integración sutil de JavaScript.
+                                Quería que una librería ficticia se sintiera ordenada y cuidada al navegar, no solo
+                                funcional.
+                                La base visual ya no tiene nada que ver con aquel primer intento, y los detalles los
+                                sigo puliendo.
                             </p>
                         </div>
                         <ul class="projects__tools-wrapper">
@@ -821,8 +846,7 @@
                                     stroke-width="2" d="M17 7L7 17M8 7h9v9" />
                             </svg>
                         </a>
-                        <a class="projects__link u-hover-slide-fill"
-                            href="https://libreriapiramide.netlify.app/">
+                        <a class="projects__link u-hover-slide-fill" href="https://libreriapiramide.netlify.app/">
                             <span class="projects__link-text">Ver demo</span>
                             <svg class="projects__link-icon" xmlns="http://www.w3.org/2000/svg" width="24px"
                                 height="24px" viewBox="0 0 24 24">
@@ -1480,7 +1504,8 @@
                         atenderte por el medio que te resulte más cómodo.
                     </p>
                     <p class="contact__cta-header-text u-fade-blur">
-                        Puedes contactar conmigo por teléfono, correo electrónico o a través de LinkedIn. Responderé con la mayor brevedad posible.
+                        Puedes contactar conmigo por teléfono, correo electrónico o a través de LinkedIn. Responderé con
+                        la mayor brevedad posible.
                     </p>
                 </div>
                 <div class="contact__cta-content">
