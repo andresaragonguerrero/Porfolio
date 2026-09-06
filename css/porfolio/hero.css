@@ -85,6 +85,7 @@
 
 .hero__author-name-line {
     display: block;
+    color: var(--color-accent);
 }
 
 .hero__author-role {
@@ -303,17 +304,17 @@
     }
 
     .marquee-row--left .marquee-track {
-        /* animation: marquee-to-left 200s linear infinite; */
-        animation-play-state: paused;
+        animation: marquee-to-left 300s linear infinite;
+        /* animation-play-state: paused; */
     }
 
     .marquee-row--right .marquee-track {
-        /* animation: marquee-to-right 220s linear infinite; */
-        animation-play-state: paused;
+        animation: marquee-to-right 320s linear infinite;
+        /* animation-play-state: paused; */
     }
 
     .marquee-row:nth-child(2) .marquee-track {
-        /* animation-duration: 240s; */
-        animation-play-state: paused;
+        animation-duration: 360s;
+        /* animation-play-state: paused; */
     }
 }

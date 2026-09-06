@@ -106,7 +106,7 @@
     font-size: var(--fs-caption);
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--color-text);
 }
 
 .contact__cta-email-text,
@@ -114,12 +114,13 @@
     font-family: var(--ff-primary);
     font-size: var(--fs-title);
     font-weight: normal;
-    color: var(--color-text);
+    color: var(--color-accent);
     text-decoration: none;
 }
 
 .contact__media-author-word {
     display: block;
+    color: var(--color-accent);
 }
 
 .contact__media-title {

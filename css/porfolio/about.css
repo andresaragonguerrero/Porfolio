@@ -99,6 +99,7 @@
     .about__statement {
         grid-column: 1 / -1;
         max-width: 30ch;
+        color: var(--color-accent);
     }
 
     .about__text-wrapper {
