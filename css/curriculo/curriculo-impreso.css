@@ -86,6 +86,7 @@ body {
     width: var(--icon-size);
     height: var(--icon-size);
     flex-shrink: 0;
+    color: var(--color-accent);
 }
 
 .contact-text {
@@ -95,6 +96,7 @@ body {
     font-weight: lighter;
     line-height: 1.2;
     white-space: nowrap;
+    color: var(--color-accent);
 }
 
 .header__title-text {
@@ -108,12 +110,13 @@ body {
     line-height: 1.05;
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--color-accent);
 }
 
 .header__role {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     margin: 2mm 0 0;
     text-align: left;
     font-family: var(--ff-secondary);
@@ -182,6 +185,7 @@ body {
     line-height: 1;
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--color-accent);
 }
 
 .section__body {
@@ -216,11 +220,13 @@ body {
     font-size: var(--fs-about);
     font-weight: bold;
     line-height: 1.2;
+    color: var(--color-accent);
 }
 
 .card__header-title span {
     font-weight: lighter;
     font-style: italic;
+    color: var(--color-text);
 }
 
 .card__header-info {
@@ -269,12 +275,6 @@ body {
     line-height: 1.4;
 }
 
-.education-icon {
-    width: var(--icon-size);
-    height: var(--icon-size);
-    flex-shrink: 0;
-}
-
 .section__card .tech-text {
     margin: 0;
     font-family: var(--ff-secondary);
@@ -285,12 +285,6 @@ body {
 
 .section__card .tech-text span {
     font-weight: lighter;
-}
-
-.languages-icon {
-    width: var(--icon-size);
-    height: var(--icon-size);
-    flex-shrink: 0;
 }
 
 .language-text {
@@ -384,6 +378,7 @@ body {
     width: 2.5mm;
     height: 2.5mm;
     flex: 0 0 2.5mm;
+    color: var(--color-accent);
 }
 
 .feature-text {
@@ -433,6 +428,7 @@ body {
     font-size: var(--fs-about);
     font-weight: normal;
     line-height: 1.4;
+    color: var(--color-accent);
 }
 
 .tool-text {
