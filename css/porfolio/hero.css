@@ -74,7 +74,7 @@
     max-width: min-content;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     font-family: var(--ff-primary);
     font-size: var(--fs-display);
     font-weight: bold;
