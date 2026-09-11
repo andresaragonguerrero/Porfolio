@@ -85,7 +85,7 @@
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1;
-    color: var(--color-text);
+    color: var(--color-accent);
 }
 
 .menu__overlay-link {
